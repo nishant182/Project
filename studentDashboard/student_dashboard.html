@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="student_dashboard.css">
+
+</head>
+<body>
+
+<div id="loader">
+    <div class="spinner"></div>
+    <div id="percent">0%</div>
+</div>
+
+<div class="container" id="dashboard">
+
+    <div class="sidebar">
+        <h2>Menu</h2>
+        <ul>
+            <li>🏠 Home</li>
+            <li>📚 Courses</li>
+            <li>📝 Assignments</li>
+            <li>📊 Results</li>
+            <li>⚙ Settings</li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <div class="dashboard-title">
+            STUDENT DASHBOARD
+        </div>
+
+        <div style="text-align:right">
+            <span class="bell">🔔</span>
+        </div>
+
+        <h2 class="typing">
+            Welcome Nishant 👋
+        </h2>
+
+        <div class="cards">
+
+            <div class="card profile">
+                <h3>Profile Card</h3>
+                <p>Name: Nishant</p>
+                <p>Course: BCA</p>
+                <p>Branch: CS</p>
+            </div>
+
+            <div class="card">
+                <h3>Attendance</h3>
+                <p>85%</p>
+            </div>
+
+            <div class="card">
+                <h3>Marks</h3>
+                <p>78%</p>
+            </div>
+
+            <div class="card">
+                <h3>Assignment</h3>
+                <p>3 Pending</p>
+            </div>
+
+        </div>
+
+            <button class="btn">
+                Submit Assignment
+            </button>
+
+    </div>
+
+</div>
+
+<script>
+
+
+let count = 0;
+let percent = document.getElementById("percent");
+
+let loading = setInterval(() => {
+
+    count++;
+
+    percent.innerText = count + "%";
+
+    if(count >= 100){
+
+        clearInterval(loading);
+
+        document.getElementById("loader").style.display="none";
+
+        document.getElementById("dashboard").style.display="flex";
+    }
+
+},30);
+
+</script>
+
+</body>
+</html>
